@@ -20,8 +20,6 @@ var (
 
 	// File names that are representing highlight classes.
 	highlightFileNames = map[string]bool{
-		"cmakelists.txt": true,
-		"dockerfile":     true,
 		"makefile":       true,
 	}
 
@@ -74,7 +72,6 @@ var (
 func NewContext() {
 	keys := conf.File.Section("highlight.mapping").Keys()
 	for i := range keys {
-		highlightMapping[keys[i].Name()] = keys[i].Value()
 	}
 }
 
